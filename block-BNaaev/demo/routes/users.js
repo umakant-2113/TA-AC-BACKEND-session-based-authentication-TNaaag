@@ -13,7 +13,7 @@ router.get("/register",(req,res,next)=>{
 
 router.post("/register",(req,res,next)=>{
 User.create(req.body,(err,users)=>{
-  console.log(users)
+  res.redirect("/users")
 })
 })
 

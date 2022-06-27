@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+    
+    
+        <h2><%= articles.title%></h2>
+        <p> <%= articles.description%></p>
+         <p><%= articles.author%></p>
+         <p><%= articles.likes%></p>
+         <a href="/articles/<%=articles.id%>/likes">Likes</a>
+         <a href="/articles/<%=articles.id%>/dislikes">Dislikes</a>
+
+        <form action="/articles/<%=articles.id%>/comments" method="POST">
+            <div class="div">
+                <textarea name="text" id="" cols="30" rows="10" placeholder="Comment"></textarea>
+                <input type="text" name="author" placeholder="Author">
+                <input type="submit" value="Add">
+            </div>
+        </form>
+    
+        
+        <h2>Comment</h2>
+        <%articles.comment.forEach(elm=>{%>
+        <h1><%= elm.text%></h1>
+        <p><%= elm.author%></p>
+        <p><%= elm.likes%></p>
+        <div>
+            <a href="/comments/<%=elm.id%>/likes">Likes</a>
+            <a href="/comments/<%=elm.id%>/dislikes">dislikes</a>
+        </div>
+        <div class="edit-div">
+            <a href="/comments/<%=elm.id%>/edit">Edit</a>
+            <a href="/comments/<%=elm.id%>/delete">Delete</a>
+        </div>
+        <%})%>
+</body>
+</html>

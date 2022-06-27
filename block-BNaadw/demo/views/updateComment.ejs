@@ -1,0 +1,5 @@
+<form action="/comments/<%=comment.id%>/edit" method="POST">
+    <textarea name="text" id="" cols="30" rows="10">  <%= comment.text%></textarea>
+    <input type="text" name="author" value="<%= comment.author%>">
+    <input type="submit" value="Add">
+</form>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <div class="big-div">
+    <div class="flex-30">
+      <h2> product name:   <%= products.product%></h2>
+      <p> product quantity: <%= products.quantity%></p>
+      <p> price <%= products.price%></p>
+      <p> likes: <%= products.likes%></p>
+      <img class="full-width" src="/images/<%=products.image%>" alt="">
+    </div>
+  
+ <a href="/products/<%=products.id%>/edit">Edit</a>
+ <a href="/products/<%=products.id%>/delete">Delete</a>
+  <div>
+    <a href="/products/<%=products.id%>/likes">Likes</a>
+    <a href="/products/<%=products.id%>/dislikes">Dislikes</a>
+  </div>
+  <!-- comment form -->
+<h2>Comments </h2>
+
+  <form action="/products/<%=products.id%>/comments" method="POST">
+    <div class="comment-div">
+    <textarea name="content" id="" cols="30" rows="10" placeholder="Comments"></textarea>
+    <input type="text" name="author" placeholder="Author">
+    <input type="submit" value="Add">
+</div>
+  
+<%products.comment.forEach(elm=>{%>
+<p><%= elm.content%></p>
+<p><%= elm.author%></p>
+<p><%= elm.likes%></p>
+<div>
+  <a href="">Likes</a>
+  <a href="">Dislikes</a>
+</div>
+<div>
+  <a href="">Edit</a>
+  <a href="">Delete</a>
+</div>
+
+<%})%>
+  </form>
+</div>
+</body>
+</html>

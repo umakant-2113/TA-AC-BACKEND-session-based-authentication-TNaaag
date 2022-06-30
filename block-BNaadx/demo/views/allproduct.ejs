@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+  <body>
+    <div class="bg-div">
+       
+    <%products.forEach(elm=>{ %>
+        <div class="sm-div">
+        <h2>PRODUCT NAME : <%= elm.product%></h2>
+        <p>NUMBER OF ITEM : <%= elm.quantity%></p>
+        <p>PRICE OF ITEM : <%= elm.price%></p>
+        <img class="full-width" src="/images/<%=elm.image%>" alt="" />
+  
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>

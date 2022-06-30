@@ -1,0 +1,36 @@
+body {
+  /* padding: 50px; */
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+.full-width{
+height: 300px;
+}
+.big-div{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 2px solid red;
+  /* background-color: #00B7FF; */
+}
+.comment-div{
+  display: flex;
+  flex-direction: column;
+  width: 23%;
+  
+}
+.comment-div>input{
+  margin: .6rem 0;
+  padding: .4rem 0;
+}
+.bg-div{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.sm-div{
+  flex: 0 1 30%;
+  border: 2px solid red;
+  margin: .5rem 0;
+}
